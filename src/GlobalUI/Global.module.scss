@@ -1,0 +1,16 @@
+.popUp{
+    transform: translateY(-10px);
+    opacity: 0;
+    animation: fadesUp .3s 1.8s forwards;
+}
+
+@keyframes fadesUp {
+    0%{
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
