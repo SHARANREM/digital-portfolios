@@ -180,7 +180,7 @@
   .softTrack {
     display: flex;
     width: max-content;
-    animation: scroll 20s linear infinite;
+    animation: scroll 30s linear infinite;
 
     .softCard {
       color: var(--bg);
@@ -189,7 +189,7 @@
       text-transform: uppercase;
       padding: 0 40px;
       white-space: nowrap;
-      -webkit-text-stroke: 1px var(--bg);
+      -webkit-text-stroke: 3px var(--bg);
       color: transparent;
       transition: 0.3s;
 
@@ -202,7 +202,7 @@
   .softTrack2 {
     display: flex;
     width: max-content;
-    animation: scroll 20s linear infinite reverse;
+    animation: scroll 30s linear infinite reverse;
 
     .softCard {
       color: var(--bg);
@@ -211,7 +211,7 @@
       text-transform: uppercase;
       padding: 0 40px;
       white-space: nowrap;
-      -webkit-text-stroke: 1px var(--bg);
+      -webkit-text-stroke: 3px var(--bg);
       color: transparent;
       transition: 0.3s;
 

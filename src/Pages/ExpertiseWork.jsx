@@ -24,6 +24,42 @@ export default function ExpertiseWork() {
 
   const roadmap = [
     {
+      title: "Front End Projects",
+      desc:
+        "Used to make simple projects while learning Web Development.",
+      date: "August 13, 2024",
+      status: "Completed",
+    },
+    {
+      title: "ToDoList, DigitalClock, WhetherApp",
+      desc:
+        "First simple projects.",
+      date: "September, 2024",
+      status: "Completed",
+    },
+    {
+      title: "Halloween Website",
+      desc:
+        "First Hackathon Project in Devpost.",
+      date: "Nov 1, 2024",
+      status: "Completed",
+    },
+    {
+      title: "Pulsepod",
+      desc:
+        "First International Hackathon Winning Project in Devpost.",
+      date: "Nov 24, 2024",
+      status: "Completed",
+    },
+    {
+      title: "First Portfolio",
+      desc:
+        "Developed as my First Original Project after learning Web Development.",
+      date: "March 12, 2025",
+      status: "Completed",
+    },
+
+    {
       title: "RemGestureControl",
       desc:
         "Gesture based PC control system with spell mode.",
@@ -40,7 +76,7 @@ export default function ExpertiseWork() {
     },
 
     {
-      title: "RemBrain",
+      title: "RemCheatCommands",
       desc:
         "Personal AI operating system for productivity.",
       date: "Future",
@@ -119,7 +155,14 @@ export default function ExpertiseWork() {
       desc:
         "Built creative web apps, AI tools and experimental systems.",
     },
+    {
+      role: "Data Science Teacher",
+      company: "Apollo Education",
+      time: "2024 & 2026",
 
+      desc:
+        "Sharing my knowledge and programming style for new developers.",
+    },
     {
       role: "Open Source Explorer",
       company: "GitHub",
@@ -136,7 +179,175 @@ export default function ExpertiseWork() {
 
   const projects = [
     {
-      title: "RemGestureControl",
+      title: "Frontend Projects",
+
+      why:
+        "Practicing Web Dev.",
+
+      how:
+        "Using HTML, CSS and JS.",
+
+      github: "https://github.com/SHARANREM/FrontEndProjects",
+      youtube: "",
+
+      tags: ["WebDev", "Beginner", "Fun"],
+    },
+    {
+      title: "To Do List",
+
+      why:
+        "Practicing Web Dev from Yt.",
+
+      how:
+        "Using HTML, CSS and JS.",
+
+      github: "https://github.com/SHARANREM/To-do-List",
+      youtube: "https://to-do-list-wine-seven-82.vercel.app/",
+
+      tags: ["WebDev", "Beginner", "Fun"],
+    },
+    {
+      title: "Digital Clock",
+
+      why:
+        "To know time in hard way😈.",
+
+      how:
+        "Using HTML, CSS and JS.",
+
+      github: "https://github.com/SHARANREM/DigitalClock",
+      youtube: "",
+
+      tags: ["WebDev", "Beginner", "Fun"],
+    },
+    {
+      title: "Weather Web",
+
+      why:
+        "Can't leave to room to check for weather💤.",
+
+      how:
+        "Using HTML, CSS and JS.",
+
+      github: "https://github.com/SHARANREM/FrontEndProjects",
+      youtube: "https://weather-app-dusky-pi-60.vercel.app/",
+
+      tags: ["API", "Beginner", "Fun"],
+    },
+    {
+      title: "Halloween Website",
+
+      why:
+        "Made for hackathon on halloween👻.",
+
+      how:
+        "Using HTML, CSS and JS.",
+
+      github: "https://github.com/SHARANREM/Halloween_Website",
+      youtube: "https://halloween-website-sepia.vercel.app/",
+
+      tags: ["WebDev", "Halloween", "Fun"],
+    },
+    {
+      title: "PulsePod",
+
+      why:
+        "Hackathon Project. Health Tips website where you can share ur heath and other tips.",
+
+      how:
+        "Using HTML, CSS and JS.",
+
+      github: "https://github.com/SHARANREM/PulsePod",
+      youtube: "https://pulsepod.vercel.app/",
+
+      tags: ["Hackathon", "Winner", "Tips"],
+    },
+    {
+      title: "First Portfolio Website",
+
+      why:
+        "To showcase my extradinory talents in development.",
+
+      how:
+        "Using HTML, CSS and JS.",
+
+      github: "https://github.com/SHARANREM/Digital-Portfolio",
+      youtube: "https://sharanportfolio-phi.vercel.app/",
+
+      tags: ["Portfolio", "Favourite", "CoolMe"],
+    },
+    {
+      title: "Clone Server",
+
+      why:
+        "To create fake servers with python for free. I wad broke to pay for cloud",
+
+      how:
+        "Used python but got Banned from the cloud 🤣🤣🤣.",
+
+      github: "https://github.com/SHARANREM/Prop1",
+      youtube: "",
+
+      tags: ["GotBanned", "FakeServer", "Fun"],
+    },
+    {
+      title: "Education Booking Website",
+
+      why:
+        "To learn prompt web development.",
+
+      how:
+        "Developed entire website with AI Studio.",
+
+      github: "https://github.com/SHARANREM/Student-Teacher-Booking-Appointment",
+      youtube: "https://student-teacher-booking-appointment-umber.vercel.app/",
+
+      tags: ["AI", "Prompting", "NEW Tools"],
+    },
+    {
+      title: "Weather Web #2",
+
+      why:
+        "Learnt Sass so wanted to redesing old Weather website.",
+
+      how:
+        "Used HTML, SASS and JS also mastered API callings and Async.",
+
+      github: "https://github.com/SHARANREM/WeatherWeb",
+      youtube: "https://weather-web-seven-omega.vercel.app/",
+
+      tags: ["SASS", "API", "ASYNC"],
+    },
+    {
+      title: "FlashPal",
+
+      why:
+        "Students' Productivity App.",
+
+      how:
+        "Made using React Native My first mobile App for everyone.",
+
+      github: "https://github.com/SHARANREM/FlashPal",
+      youtube: "https://youtu.be/mbbvPucNYxY",
+
+      tags: ["MobileApp", "AppDev", "Student Tool"],
+    },
+    {
+      title: "Blind Help Tool",
+
+      why:
+        "Hackathon app for helping Visually Challenged people to use PC.",
+
+      how:
+        "Made using Python for entire build.",
+
+      github: "https://github.com/SHARANREM/TechastraThrones_Hack",
+      youtube: "",
+
+      tags: ["Hackathon", "Helping Tool"],
+    },
+    {
+      title: "Rem Gesture Control",
 
       why:
         "Wanted a faster and creative way to control PCs using gestures.",
@@ -144,26 +355,12 @@ export default function ExpertiseWork() {
       how:
         "Tracks mouse movement and recognizes patterns for commands.",
 
-      github: "#",
-      youtube: "#",
+      github: "https://github.com/SHARANREM/RemGestureControl-Codes-V2",
+      youtube: "",
 
       tags: ["AI", "Automation", "Gestures"],
     },
 
-    {
-      title: "RemFolderControl",
-
-      why:
-        "To solve messy file organization problems using AI.",
-
-      how:
-        "Uses semantic understanding and smart categorization.",
-
-      github: "#",
-      youtube: "",
-
-      tags: ["AI", "Files", "Productivity"],
-    },
   ];
 
   /* =========================
@@ -172,26 +369,26 @@ export default function ExpertiseWork() {
 
   const futureProjects = [
     {
-      title: "RemStudio",
+      title: "Rem Folder Management",
 
       desc:
-        "AI media workspace for creators with semantic search.",
+        "AI based tool for Managing Folders and Fast Searching.",
 
       needs:
-        "Frontend Developers, Designers, AI Engineers",
+        "Python Devs, AI Engineers, Python UI devs",
 
       mail:
         "mailto:youremail@gmail.com?subject=Interested in RemStudio",
     },
 
     {
-      title: "AI Storytelling Platform",
+      title: "Rem Cheat Commands",
 
       desc:
-        "Generate cinematic audio storytelling experiences.",
+        "Experience PC with GTA Cheat controls.",
 
       needs:
-        "Audio Engineers, Writers, AI Developers",
+        "Python Devs, Testers",
 
       mail:
         "mailto:youremail@gmail.com?subject=Interested in AI Storytelling Platform",
@@ -412,7 +609,7 @@ export default function ExpertiseWork() {
 
                 <p>
                   Things I built because
-                  my brain said "what if?"
+                  my brain said "what if?" and might reach 100 projects
                 </p>
               </div>
 

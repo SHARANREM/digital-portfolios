@@ -29,9 +29,9 @@ export default function Blogs() {
     {
       id: 1,
 
-      title: "Building Gesture Controls",
+      title: "Built Gesture Controls",
 
-      category: "AI",
+      category: "Projects",
 
       image:
         "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
@@ -57,7 +57,7 @@ if(spell === "L Shape"){
       `,
 
       youtube:
-        "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        "",
     },
 
     {
@@ -83,6 +83,7 @@ while protecting privacy and reducing dependency.
       code: `
 model.runOffline(true);
 privacyMode.enable();
+!Error : RAM Issue Arised
       `,
 
       youtube: "",
@@ -102,16 +103,15 @@ privacyMode.enable();
         "Adding games, animations and experiments to portfolio.",
 
       content: `
-Traditional portfolios felt boring.
-
-I wanted visitors to actually remember the experience.
+I Kept my Portfolio same for 2 years
+So Thought of Upgrading it 
+Also My that was my First portfolio so I lacked code readablity
+And This is the New Portfolio 😁😁😁
       `,
 
-      code: `
-while(true){
-  redesignPortfolio();
-}
-      `,
+      // code: `
+
+      // `,
 
       youtube: "",
     },

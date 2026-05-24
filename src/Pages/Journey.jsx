@@ -5,7 +5,7 @@ import useTheme from "../hooks/useTheme";
 import { useState, useEffect } from "react";
 import Nav from "../Components/UI/Nav";
 import styles from "../GlobalUI/Journey.module.scss";
-
+import cert from "../assets/Certificates/images.png";
 export default function Journey() {
   const [loading, setLoading] = useState(true);
   const { theme } = useTheme();
@@ -28,9 +28,9 @@ export default function Journey() {
 
       cgpa: "8.5 CGPA",
 
-      status: "Ongoing",
+      status: "Completed",
 
-      year: "2023 - Present",
+      year: "2023 - 2026",
     },
 
     {
@@ -39,11 +39,23 @@ export default function Journey() {
       degree:
         "BS Degree in Data Science and Applications",
 
-      cgpa: "Pursuing",
+      cgpa: "Current 7.5",
 
       status: "Ongoing",
 
       year: "2024 - Present",
+    },
+    {
+      college: "Apollo Education",
+
+      degree:
+        "Data Science Course ",
+
+      cgpa: "100% Completed",
+
+      status: "Completed",
+
+      year: "2023 - 2024",
     },
   ];
 
@@ -69,7 +81,17 @@ export default function Journey() {
 
       year: "2022",
 
-      link: "https://react.dev",
+      // link: "https://react.dev",
+    },
+
+    {
+      title: "Python, Java & App Dev",
+      desc:
+        "Mastering Core Programmings such as Py, Java, React Native, Flutter, R.",
+
+      year: "2024",
+
+      link: "",
     },
 
     {
@@ -77,7 +99,7 @@ export default function Journey() {
       desc:
         "Built offline AI tools and automation projects.",
 
-      year: "2024",
+      year: "2025",
 
       link: "",
     },
@@ -98,12 +120,12 @@ export default function Journey() {
   ========================== */
 
   const certificates = [
-    "/certificates/c1.jpg",
-    "/certificates/c2.jpg",
-    "/certificates/c3.jpg",
-    "/certificates/c4.jpg",
-    "/certificates/c5.jpg",
-    "/certificates/c6.jpg",
+    cert,
+    cert,
+    cert,
+    cert,
+    cert,
+    cert,
   ];
 
   return (

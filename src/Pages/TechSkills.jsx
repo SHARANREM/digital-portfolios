@@ -28,7 +28,7 @@ export default function TechSkills() {
       icon: "ri-reactjs-line",
       desc: "Learnt for building smooth modern UI and interactive websites.",
       level: "Advanced",
-      link: "https://react.dev",
+      link: "https://youtu.be/CgkZ7MvWUAA",
     },
 
     {
@@ -36,23 +36,31 @@ export default function TechSkills() {
       icon: "ri-javascript-line",
       desc: "Main language for web development and creative coding.",
       level: "Advanced",
-      link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      link: "https://youtu.be/lfmg-EJ8gm4",
     },
 
     {
       title: "Python",
       icon: "ri-code-box-line",
       desc: "Used for AI tools, automation and experiments.",
-      level: "Intermediate",
-      link: "https://python.org",
+      level: "Advanced",
+      link: "https://youtu.be/ix9cRaBkVe0",
+    },
+
+    {
+      title: "HTML/CSS",
+      icon: "ri-html5-line",
+      desc: "Skeleton of Web Dev So I learnt it as soon as I could. Also Make sure folder structuring is Imp for Web.",
+      level: "Advanced",
+      link: "https://youtu.be/HGTJBPNC-Gw",
     },
 
     {
       title: "SCSS",
       icon: "ri-palette-line",
       desc: "For writing cleaner and scalable styles.",
-      level: "Intermediate",
-      link: "https://sass-lang.com",
+      level: "Advanced",
+      link: "https://youtu.be/_a5j7KoflTs",
     },
 
     {
@@ -60,8 +68,58 @@ export default function TechSkills() {
       icon: "ri-github-line",
       desc: "Version control and project management.",
       level: "Intermediate",
-      link: "https://github.com",
+      link: "https://youtu.be/mAFoROnOfHs",
     },
+
+    {
+      title: "Java",
+      icon: "ri-java-line",
+      desc: "Learnt in Clg and Tried it with Flutter and Made an App PrinterRem Check it in the Projects!.",
+      level: "Intermediate",
+      link: "https://youtu.be/xTtL8E4LzTQ",
+    },
+
+    {
+      title: "React Native",
+      icon: "ri-reactjs-line",
+      desc: "Learnt the Core Foundation and Made an app FlashPal for internship at Marzelet Info Technology.",
+      level: "Intermediate",
+      link: "https://youtu.be/xTtL8E4LzTQ",
+    },
+
+    {
+      title: "Firebase",
+      icon: "ri-firebase-line",
+      desc: "Wanted a small free DB for Hackathons, So I learnt the Fundamentals.",
+      level: "Fundamentals",
+      link: "https://youtu.be/z-pyxOx3i1s",
+    },
+
+    {
+      title: "Figma & Canva",
+      icon: "ri-figma-line",
+      desc: "Learnt due to circumstances and withing 3hrs Since I promised for a web design😓. Canva in Clg for invitation.",
+      level: "Basic-Intermediate",
+      link: "https://youtu.be/ezldKx-jPag",
+    },
+
+    {
+      title: "Davinci & Capcut",
+      icon: "ri-edit-line",
+      desc: "Learning for making YT videos for PODEVS Community.",
+      level: "Basic",
+      link: "https://youtu.be/MCDVcQIA3UM",
+    },
+
+    {
+      title: "Prompting",
+      icon: "ri-robot-2-line",
+      desc: "Why did I learn it you ask? You know Why.",
+      level: "Advanced",
+      link: "https://chatgpt.com",
+    },
+
+
   ];
 
   /* =========================
@@ -111,6 +169,22 @@ export default function TechSkills() {
       title: "Advanced Animations",
       icon: "ri-magic-line",
     },
+
+    {
+      title: "Cloud Computing",
+      icon: "ri-cloud-line",
+    },
+
+    {
+      title: "Model Trainings",
+      icon: "ri-equalizer-line",
+    },
+
+    {
+      title: "App Development",
+      icon: "ri-google-play-line",
+    },
+
   ];
 
   /* =========================
@@ -122,35 +196,49 @@ export default function TechSkills() {
       title: "React Bits",
       category: "UI",
       desc: "Beautiful modern React components and animations.",
-      link: "https://github.com",
+      link: "https://github.com/DavidHDev/react-bits",
     },
 
     {
       title: "ShadCN UI",
       category: "Frontend",
       desc: "Modern accessible UI components.",
-      link: "https://github.com",
+      link: "https://github.com/shadcn-ui/ui",
     },
 
     {
       title: "Whisper",
       category: "AI",
       desc: "Offline speech-to-text AI by OpenAI.",
-      link: "https://github.com",
+      link: "https://github.com/openai/whisper",
     },
 
     {
       title: "Framer Motion",
       category: "Animation",
       desc: "Powerful React animation library.",
-      link: "https://github.com",
+      link: "https://github.com/topics/framer-motion",
     },
 
     {
       title: "Three.js",
       category: "3D",
       desc: "Create crazy 3D web experiences.",
-      link: "https://github.com",
+      link: "https://github.com/mrdoob/three.js/",
+    },
+
+    {
+      title: "ComfyUI",
+      category: "Frontend",
+      desc: "Provides Node Graphics for AI creation engines.",
+      link: "https://github.com/Comfy-Org/ComfyUI",
+    },
+
+    {
+      title: "Homepage",
+      category: "Prod. Tool",
+      desc: "A modern, fully static, fast, secure fully proxied, highly customizable application dashboard with integrations for over 100 services and translations into multiple languages. Easily configured via YAML files or through docker label discovery.",
+      link: "https://github.com/Comfy-Org/ComfyUI",
     },
   ];
     const filters = [
@@ -158,6 +246,7 @@ export default function TechSkills() {
     "AI",
     "Frontend",
     "Animation",
+    "Prod. Tool",
     "3D",
     "UI",
   ];
