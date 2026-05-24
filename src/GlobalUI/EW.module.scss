@@ -1,0 +1,392 @@
+/* ==========================================================================
+   THEME SETUP & CSS VARIABLES
+   ========================================================================== */
+.light {
+  --bg: #ffffff;
+  --text: #000000;
+  --faint: rgba(0, 0, 0, 0.03);
+  --border: rgba(0, 0, 0, 0.1);
+  --border-heavy: rgba(0, 0, 0, 0.8);
+  --accent: #000000;
+  --invert-text: #ffffff;
+  --grid-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark {
+  --bg: #0a0a0a;
+  --text: #ffffff;
+  --faint: rgba(255, 255, 255, 0.03);
+  --border: rgba(255, 255, 255, 0.1);
+  --border-heavy: rgba(255, 255, 255, 0.8);
+  --accent: #ffffff;
+  --invert-text: #000000;
+  --grid-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================================================
+   GLOBAL STRUCTURE & ANIMATIONS
+   ========================================================================== */
+.Container {
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  font-family: "Inter", -apple-system, sans-serif;
+  transition: background 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-x: hidden;
+  position: relative;
+
+  // Technical Background Grid
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: linear-gradient(var(--grid-color) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  // Modern Scrollbar
+  &::-webkit-scrollbar { width: 6px; }
+  &::-webkit-scrollbar-track { background: var(--bg); }
+  &::-webkit-scrollbar-thumb { background: var(--text); }
+
+  section {
+    position: relative;
+    z-index: 1;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 100px 5%;
+    
+    // Reveal Animation on Scroll
+    opacity: 0;
+    transform: translateY(30px);
+    animation: reveal 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+    animation-pause-outside-viewport: initial; 
+  }
+}
+
+@keyframes reveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   COMPONENT: SECTION TITLES
+   ========================================================================== */
+.sectionTitle {
+  margin-bottom: 60px;
+  h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    line-height: 1;
+    margin-bottom: 15px;
+  }
+  p {
+    font-size: 1.1rem;
+    opacity: 0.6;
+    max-width: 600px;
+  }
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  
+  .heroContent {
+    span {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      margin-bottom: 20px;
+      padding: 5px 12px;
+      border: 1px solid var(--text);
+    }
+    h1 {
+      font-size: clamp(3rem, 12vw, 9rem);
+      font-weight: 900;
+      line-height: 0.85;
+      letter-spacing: -5px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      // Stroke effect for "Works" feel
+      -webkit-text-stroke: 1px var(--text);
+      color: transparent;
+      transition: 0.5s;
+      &:hover { color: var(--text); }
+    }
+    p {
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      max-width: 600px;
+      line-height: 1.4;
+      font-weight: 500;
+    }
+  }
+}
+
+/* ==========================================================================
+   ROADMAP (TIMELINE)
+   ========================================================================== */
+.roadmapGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 1px; // Grid lines
+  background: var(--border);
+  border: 1px solid var(--border);
+
+  .roadmapCard {
+    background: var(--bg);
+    padding: 40px;
+    transition: 0.4s ease;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      background: var(--faint);
+      transform: translateY(-5px);
+    }
+
+    .roadmapTop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      
+      span { font-family: monospace; font-weight: 700; opacity: 0.5; }
+      
+      .tag {
+        font-size: 0.65rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        padding: 4px 10px;
+        border: 1px solid var(--text);
+        
+        &.completed { background: var(--text); color: var(--bg); }
+        &.working { border-style: dashed; }
+      }
+    }
+
+    h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 15px; }
+    p { font-size: 0.95rem; line-height: 1.6; opacity: 0.7; }
+  }
+}
+
+/* ==========================================================================
+   SWITCHABLE IDEAS & PROBLEMS
+   ========================================================================== */
+.switchBtns {
+  display: flex;
+  gap: 0;
+  margin-bottom: 40px;
+  border: 2px solid var(--text);
+  width: fit-content;
+
+  button {
+    background: transparent;
+    color: var(--text);
+    border: none;
+    padding: 15px 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.8rem;
+
+    &.activeBtn {
+      background: var(--text);
+      color: var(--bg);
+    }
+  }
+}
+
+.ideaGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+
+  .ideaCard {
+    padding: 40px;
+    border: 1px solid var(--border);
+    transition: 0.3s;
+
+    span { font-size: 0.7rem; font-weight: 800; opacity: 0.4; text-transform: uppercase; }
+    h3 { font-size: 1.8rem; margin: 15px 0; letter-spacing: -1px; }
+    p { margin-bottom: 25px; line-height: 1.6; opacity: 0.8; }
+    
+    a {
+      font-weight: 900;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.85rem;
+      border-bottom: 2px solid var(--text);
+      padding-bottom: 2px;
+    }
+
+    &:hover {
+      border-color: var(--text);
+      box-shadow: 10px 10px 0px var(--faint);
+    }
+  }
+}
+
+/* ==========================================================================
+   EXPERIENCE SECTION (TECHNICAL LIST)
+   ========================================================================== */
+.experienceGrid {
+  .expCard {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: baseline;
+
+    span { font-family: monospace; font-weight: 600; }
+    h3 { font-size: 1.8rem; font-weight: 900; text-transform: uppercase; }
+    h4 { font-size: 1rem; margin: 5px 0 15px; opacity: 0.6; }
+    p { max-width: 700px; line-height: 1.7; font-size: 1.05rem; }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  }
+}
+
+/* ==========================================================================
+   PROJECTS SECTION (BLUEPRINT STYLE)
+   ========================================================================== */
+.projectCard {
+  border: 2px solid var(--text);
+  margin-bottom: 60px;
+  
+  .projectHeader {
+    padding: 30px;
+    border-bottom: 2px solid var(--text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    h3 { font-size: 2.2rem; font-weight: 900; text-transform: uppercase; letter-spacing: -1px; }
+    .projectTags {
+      display: flex;
+      gap: 10px;
+      span { 
+        font-size: 0.7rem; 
+        font-weight: 800; 
+        padding: 5px 12px; 
+        background: var(--text); 
+        color: var(--bg);
+      }
+    }
+  }
+
+  .projectContent {
+    display: flex;
+    flex-wrap: wrap;
+
+    .projectInfo {
+      flex: 1;
+      min-width: 300px;
+      padding: 40px;
+      border-right: 1px solid var(--border);
+      &:last-child { border-right: none; }
+
+      h4 { font-size: 0.75rem; text-transform: uppercase; opacity: 0.5; margin-bottom: 15px; letter-spacing: 2px; }
+      p { font-size: 1.1rem; line-height: 1.5; }
+    }
+  }
+
+  .projectBtns {
+    padding: 20px 40px;
+    background: var(--faint);
+    display: flex;
+    gap: 30px;
+    border-top: 1px solid var(--border);
+
+    a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 900;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      &:hover { opacity: 0.6; }
+    }
+  }
+}
+
+/* ==========================================================================
+   FUTURE PROJECTS (INVERTED IMPACT)
+   ========================================================================== */
+.futureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+
+  .futureCard {
+    background: var(--text);
+    color: var(--bg);
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h3 { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px; text-transform: uppercase; }
+    p { font-size: 1.1rem; opacity: 0.8; margin-bottom: 30px; }
+    span { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; opacity: 0.6; }
+    h4 { font-size: 1.2rem; margin-bottom: 40px; }
+
+    a {
+      align-self: flex-start;
+      padding: 15px 35px;
+      background: var(--bg);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 900;
+      text-transform: uppercase;
+      transition: 0.3s;
+      &:hover { transform: translateX(10px); }
+    }
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE OVERRIDES (CLEAN & NO OVERLAY)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .projectContent .projectInfo {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 768px) {
+  section { padding: 60px 20px; }
+  
+  .hero .heroContent h1 { font-size: 4rem; letter-spacing: -2px; }
+  
+  .futureGrid {
+    grid-template-columns: 1fr;
+    .futureCard { padding: 40px 25px; }
+  }
+
+  .projectHeader h3 { font-size: 1.6rem; }
+}
+
+@media (max-width: 480px) {
+  .hero .heroContent h1 { font-size: 3.2rem; }
+  .switchBtns { width: 100%; button { flex: 1; padding: 12px 10px; font-size: 0.7rem; } }
+  .roadmapGrid .roadmapCard { padding: 25px; }
+}

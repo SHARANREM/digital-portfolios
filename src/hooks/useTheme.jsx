@@ -1,22 +1,39 @@
 import { useState, useEffect } from "react";
 
+const listeners = new Set();
+
+function notifyAll(theme) {
+    listeners.forEach((l) => l(theme));
+}
+
 export default function useTheme() {
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("theme") || "light";
-  });
+    const [theme, setTheme] = useState(
+        () => localStorage.getItem("theme") || "light"
+    );
 
-  // Apply to body + save to localStorage
-  useEffect(() => {
-    document.body.style.background = theme === "light" ? "#fff" : "#1c1c1c";
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+    useEffect(() => {
+        const listener = (newTheme) => setTheme(newTheme);
 
-  // Toggle theme with reload
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    localStorage.setItem("theme", newTheme);
-    setTheme(newTheme);
-  };
+        listeners.add(listener);
+        return () => listeners.delete(listener);
+    }, []);
 
-  return { theme, toggleTheme };
+    useEffect(() => {
+        document.body.style.background =
+            theme === "light" ? "#fff" : "#1c1c1c";
+
+        localStorage.setItem("theme", theme);
+        notifyAll(theme);
+    }, [theme]);
+
+    const toggleTheme = () => {
+        setTheme((prev) => {
+            const newTheme = prev === "light" ? "dark" : "light";
+            localStorage.setItem("theme", newTheme);
+            notifyAll(newTheme);
+            return newTheme;
+        });
+    };
+
+    return { theme, toggleTheme };
 }

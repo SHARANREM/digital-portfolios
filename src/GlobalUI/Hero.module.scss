@@ -1,0 +1,197 @@
+// Responsive
+@mixin res($size){
+    @media all and (max-width: $size){
+        @content;
+    }
+}
+p{
+  margin: 10px;
+  color: var(--drop-bg);
+}
+marquee{
+  color: var(--drop-bg);
+}
+// Theme
+.light{
+    --bg:#fff;
+    --drop-bg:#1c1c1c;
+}
+
+.dark{
+    --bg:#1c1c1c;
+    --drop-bg:#fff;
+}
+
+.coint1{
+    text-decoration: none;
+    color: var(--drop-bg);
+    position: absolute;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    left: 15px;
+    margin-top: 40px;
+    border-left: 2px dashed var(--drop-bg);
+    cursor: pointer;
+    transition: .2s ease;
+    &:hover{
+        background-color: var(--drop-bg);
+        color: var(--bg);
+    }
+}
+.coint2{
+    position: absolute;
+    right: 10px;
+    text-decoration: none;
+    bottom: 15px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    border-right: 2px dashed var(--drop-bg);
+    color: var(--drop-bg);
+    transition: .2s ease;
+    &:hover{
+        background-color: var(--drop-bg);
+        color: var(--bg);
+    }
+}
+
+.me{
+        display: flex;
+        align-items: center;
+        justify-content: center ;
+        height: 80%;
+        flex-direction: column;
+        .group{
+            font-family: "Major Mono Display", monospace;
+            font-size: 7rem;
+            width: 70%;
+            text-align: center;
+            z-index: 99;
+            color: transparent;
+            -webkit-text-stroke: 1px var(--drop-bg);
+            transition: .2s ease;
+            height: fit-content;
+        }
+        .group:hover{
+            z-index: 101;
+            color: var(--drop-bg)    ;
+            -webkit-text-stroke: 1px var(--drop-bg);
+        }
+        .me-img{
+            position: absolute;
+            z-index: 100;
+            transition: .2s;
+        }
+        button{
+            z-index: 101;
+            position: relative;
+            top: 20%;
+            transition:.5s ease;
+            cursor: pointer ;      
+                padding: 15px 20px;
+                background-color: #333;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                border: 2px solid white;
+        }
+        button:hover{
+            padding-left: 40px;
+            background-color: #5f5f5f;
+        }
+        @include res(1080px){
+            height: 100%;
+            .group{
+                font-size: 6rem;
+            }
+        }
+        @include res(920px){
+            margin-top: 20px;
+            .me-img{
+                position: relative;
+                top: 0%;
+            }
+            .group{
+                font-size: 5rem;
+            }
+            button{
+                top: 1%;
+            }
+        }
+        @include res(800px){
+            .group{
+                font-size: 4rem;
+            }
+        }
+        @include res(630px){
+            .me-img{
+                position: relative;
+                top: -10%;
+            }
+            .group{
+                height: fit-content;
+            }
+            button{
+                top: 1%;
+            }
+        }
+        @include res(550px){
+            .me-img{
+                position: relative;
+                top: -10%;
+                width: 300px;
+                height: 350px;
+            }
+            .group{
+                margin-top: 10px;
+                font-size: 2.5rem;
+            }
+            button{
+                top: 1%;
+            }
+        }
+        @include res(425px){
+            .me-img{
+                position: relative;
+                top: -10%;
+                width: 300px;
+                height: 350px;
+            }
+            .group{
+                margin-top: 10px;
+                font-size: 2rem;
+            }
+            button{
+                top: 1%;
+            }
+        }
+        @include res(405px){
+            .me-img{
+                position: relative;
+                top: -10%;
+                width: 300px;
+                height: 350px;
+            }
+            .group{
+                margin-top: 10px;
+                font-size: 1.5rem;
+            }
+            button{
+                top: 1%;
+            }
+        }
+    }
+    p{
+        
+        text-align: center;
+    }
+    .hoblink{
+        margin-top: 10px;
+        
+        text-align: left; background-color: #333; width: fit-content; padding: 10px; color: white; border-radius: 3px;
+    }
+    @include res(920px){
+        .hoblink{
+            text-align: center;
+            width: 100%;
+        }
+    }

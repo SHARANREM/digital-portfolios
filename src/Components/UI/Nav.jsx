@@ -26,7 +26,9 @@ export default function Nav() {
         setExit(true)
         setTimeout(()=>{navigate(loc)},2000);
     }
-
+    const openMail = () => {
+        window.location.href = "mailto:sharanplm@gmail.com";
+    };
     return (
         <>
         {exit &&
@@ -54,7 +56,7 @@ export default function Nav() {
                         <li onClick={()=>{movePage("/expertisework")}}>Expertise & Work.</li>
                     </ul>
                     <button className={styles.ctas} onClick={toggleTheme}>{theme.charAt(0).toUpperCase()}</button>
-                    <button className={styles.cta}>@Sharan</button>
+                    <button className={styles.cta} onClick={openMail}>@Sharan</button>
                 </nav>
 
                 {/* Mobile Menu */}
@@ -73,6 +75,7 @@ export default function Nav() {
                         <button
                             className={styles.menuBtn}
                             style={{ animationDelay: "1.2s" }}
+                            onClick={openMail}
                         >
                             Wanna Talk
                         </button>

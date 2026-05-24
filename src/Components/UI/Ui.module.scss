@@ -56,7 +56,7 @@
             &:hover{
                 padding: 0px 30px;
                 
-                box-shadow: 0px 13px 30px 3px color.adjust(grey, $lightness: 30%);
+                box-shadow: 0px 3px 20px 3px color.adjust(rgb(110, 110, 110), $lightness: 30%);
 
             }
         }

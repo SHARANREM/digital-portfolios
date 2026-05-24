@@ -1,0 +1,318 @@
+/* ==========================================================================
+   THEME VARIABLES & BASE
+   ========================================================================== */
+
+.light {
+  --bg: #fff;
+  --drop-bg: #1c1c1c; 
+  --faint: rgba(28, 28, 28, 0.05);
+  --border: rgba(28, 28, 28, 0.15);
+  --accent: #000;
+}
+
+.dark {
+  --bg: #1c1c1c;
+  --drop-bg: #fff; 
+  --faint: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.15);
+  --accent: #fff;
+}
+
+.Container {
+  background-color: var(--bg);
+  color: var(--drop-bg);
+  min-height: 100vh;
+  transition: background 0.5s ease;
+  font-family: 'Inter', -apple-system, sans-serif;
+  overflow-x: hidden;
+
+  section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 20px;
+  }
+}
+
+/* ==========================================================================
+   REUSABLE COMPONENTS
+   ========================================================================== */
+
+.sectionTitle {
+  margin-bottom: 60px;
+  h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: -2px;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 6px;
+      background: var(--drop-bg);
+    }
+  }
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+
+.hero {
+  text-align: center;
+  padding-top: 180px !important;
+  animation: fadeInDown 1s ease;
+
+  h1 {
+    font-size: clamp(4rem, 12vw, 9rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -4px;
+    line-height: 0.8;
+    margin-bottom: 30px;
+  }
+
+  p {
+    font-size: 1.2rem;
+    max-width: 500px;
+    margin: 0 auto;
+    opacity: 0.6;
+    font-weight: 500;
+  }
+}
+
+/* ==========================================================================
+   EDUCATION SECTION
+   ========================================================================== */
+
+.educationGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+
+  .educationCard {
+    border: 2px solid var(--drop-bg);
+    padding: 40px;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: var(--bg);
+
+    &:hover {
+      box-shadow: 15px 15px 0px var(--drop-bg);
+      transform: translate(-5px, -5px);
+    }
+
+    .eduTop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+
+      span {
+        font-weight: 900;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+      }
+
+      .status {
+        padding: 4px 12px;
+        font-size: 0.7rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        border: 1px solid var(--drop-bg);
+        
+        &.ongoing { background: var(--drop-bg); color: var(--bg); }
+      }
+    }
+
+    h3 { font-size: 1.5rem; margin-bottom: 10px; line-height: 1.2; }
+    p { opacity: 0.7; margin-bottom: 20px; font-weight: 500; }
+    h4 { font-size: 1.2rem; font-weight: 900; }
+  }
+}
+
+/* ==========================================================================
+   PROFESSIONAL TIMELINE
+   ========================================================================== */
+
+.timelineSection {
+  .timeline {
+    position: relative;
+    padding-left: 50px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .timelineItem {
+      position: relative;
+      margin-bottom: 60px;
+      opacity: 0;
+      transform: translateX(-20px);
+      animation: slideRight 0.6s ease forwards;
+
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) { animation-delay: #{$i * 0.2}s; }
+      }
+
+      .timelineDot {
+        position: absolute;
+        left: -50px;
+        top: 10px;
+        width: 16px;
+        height: 16px;
+        background: var(--bg);
+        border: 4px solid var(--drop-bg);
+        border-radius: 50%;
+        z-index: 2;
+      }
+
+      .timelineCard {
+        span {
+          font-weight: 900;
+          opacity: 0.4;
+          font-size: 2rem;
+          display: block;
+          margin-bottom: 10px;
+        }
+        
+        h3 { font-size: 1.8rem; margin-bottom: 10px; }
+        p { max-width: 600px; line-height: 1.6; opacity: 0.7; margin-bottom: 15px; }
+        
+        a {
+          text-decoration: none;
+          color: var(--drop-bg);
+          font-weight: 800;
+          text-transform: uppercase;
+          font-size: 0.8rem;
+          border-bottom: 2px solid var(--drop-bg);
+          transition: 0.3s;
+          &:hover { padding-left: 10px; }
+        }
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   CERTIFICATES (POP ANIMATION)
+   ========================================================================== */
+
+.certificateGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 200px;
+  gap: 20px;
+
+  .certificateCard {
+    position: relative;
+    overflow: hidden;
+    background: var(--faint);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    // POP Animation Base
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(1.1);
+      transition: 0.5s ease;
+    }
+
+    &:hover {
+      transform: scale(1.05); // The "Pop"
+      z-index: 10;
+      border-color: var(--drop-bg);
+
+      img {
+        filter: grayscale(0%);
+        transform: scale(1.1);
+      }
+    }
+
+    &.large { grid-row: span 2; grid-column: span 2; }
+    &.medium { grid-row: span 2; }
+    &.small { grid-row: span 1; }
+  }
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.footer {
+  text-align: center;
+  padding: 100px 0;
+  
+  button {
+    background: transparent;
+    border: 2px solid var(--drop-bg);
+    color: var(--drop-bg);
+    padding: 15px 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background: var(--drop-bg);
+      color: var(--bg);
+    }
+  }
+}
+
+/* ==========================================================================
+   ANIMATIONS
+   ========================================================================== */
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideRight {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ==========================================================================
+   RESPONSIVENESS
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .hero h1 { font-size: 5rem; letter-spacing: -2px; }
+  .certificateGrid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    .certificateCard.large { grid-column: span 1; grid-row: span 1; }
+  }
+}
+
+@media (max-width: 600px) {
+  section { padding: 60px 20px; }
+  .hero { padding-top: 120px !important; }
+  .educationGrid { grid-template-columns: 1fr; }
+  
+  .timelineSection {
+    .timeline {
+      padding-left: 30px;
+      .timelineItem .timelineDot { left: -30px; width: 12px; height: 12px; }
+    }
+  }
+
+  .certificateGrid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 250px;
+    .certificateCard.large, .certificateCard.medium { grid-column: span 1; grid-row: span 1; }
+  }
+}
